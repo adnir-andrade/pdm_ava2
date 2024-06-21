@@ -25,7 +25,14 @@ export default function list() {
     const fetchData = async () => {
       try {
         const response = await api.get("/survivors");
-        setData(response.data.survivors);
+
+        const sortedData = response.data.survivors.sort(
+          (a: Survivor, b: Survivor) => {
+            return parseInt(a.id!) - parseInt(b.id!);
+          }
+        );
+
+        setData(sortedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
