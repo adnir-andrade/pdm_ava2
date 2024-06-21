@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "expo-router";
 import LoginButton from "../components/LoginButton";
 import FullScreen from "../components/containers/Fullscreen";
@@ -7,7 +7,7 @@ import Background from "../components/ui/Background";
 import Logo from "../components/ui/Logo";
 import LoginForm from "../components/LoginForm";
 
-export default function index() {
+export default function Index() {
   const router = useRouter();
 
   const [username, setUsername] = useState("");
