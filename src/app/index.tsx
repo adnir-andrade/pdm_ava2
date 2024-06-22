@@ -28,7 +28,7 @@ export default function Index() {
             setUsername={setUsername}
             setPassword={setPassword}
           />
-          <LoginButton onPress={handleLogin} />
+          <LoginButton onPress={handleLogin} testID="login-button-index" />
         </View>
       </Background>
     </FullScreen>

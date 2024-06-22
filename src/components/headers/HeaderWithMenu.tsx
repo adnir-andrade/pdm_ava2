@@ -78,6 +78,7 @@ export default function HeaderWithMenu({ title }: HeaderWithTitleProps) {
               ios_backgroundColor="#3e3e3e"
               onValueChange={app!.toggleSwitch}
               value={app!.isEnabled}
+              testID="toggle-mode"
             />
             <TouchableOpacity style={styles.menuIcon} onPress={handleOpen}>
               <Ionicons name="menu-outline" size={24} color={app!.textColor} />
