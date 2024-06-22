@@ -10,7 +10,7 @@ type FormInput = {} & TouchableOpacityProps;
 
 export default function LoginButton({ ...rest }: FormInput) {
   return (
-    <TouchableOpacity style={styles.container} {...rest}>
+    <TouchableOpacity style={styles.container} testID="login-button" {...rest}>
       <ImageBackground
         source={require("../../assets/images/Login-6-16-2024.png")}
         style={styles.bg}
