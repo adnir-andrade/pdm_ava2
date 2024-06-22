@@ -1,4 +1,4 @@
-import { Button, View, StyleSheet } from "react-native";
+import { Button, View, StyleSheet, Pressable, Text } from "react-native";
 import React, { useState } from "react";
 import HeaderWithTitle from "../components/headers/HeaderWithMenu";
 import Background from "../components/ui/Background";
@@ -100,7 +100,9 @@ export default function Create() {
             placeholder="Latitude"
             keyboardType="numeric"
           />
-          <Button title="Submit" onPress={handleSubmit} />
+          <Pressable style={styles.buttonContainer} onPress={handleSubmit}>
+            <Text style={styles.buttonText}>Create Survivor</Text>
+          </Pressable>
         </Card>
       </View>
     </Background>
@@ -112,12 +114,12 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   view: {
+    height: 475,
     margin: 25,
-    paddingHorizontal: 20, // Ajuste conforme necessário
+    paddingHorizontal: 20,
   },
   container: {
     padding: 4,
-    width: "100%",
     borderBottomColor: "grey",
     borderBottomWidth: 1,
   },
@@ -129,5 +131,20 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#cdab8f",
+  },
+  buttonContainer: {
+    backgroundColor: "#2e0304",
+    width: 250,
+    borderRadius: 30,
+    paddingHorizontal: 16,
+    marginVertical: 5,
+    alignSelf: "center",
+  },
+  buttonText: {
+    paddingVertical: 8,
+    marginVertical: 8,
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
