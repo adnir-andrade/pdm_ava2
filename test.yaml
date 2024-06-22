@@ -1,0 +1,35 @@
+appId: com.safehouse.app
+---
+- openLink: exp://192.168.0.115:8081
+
+- tapOn: rickgrimes@twd.com
+- inputText: bill@l4d.com
+- tapOn: Password
+- inputText: thesacrifice
+- tapOn:
+    id: "login-button-index"
+- tapOn:
+    id: "toggle-mode"
+- tapOn:
+    point: 91%,8%
+- tapOn: Create
+- tapOn: Rick Grimes
+- inputText: William "Bill" Overbeck
+- tapOn: Age
+- inputText: 52
+- tapOn: Cat
+- inputText: Male
+- tapOn: Longitude
+- inputText: 108.2772
+- tapOn: Latitude
+- inputText: 14.0583
+- tapOn: Create Survivor
+- scroll
+- scroll
+- scroll
+- scroll
+- tapOn:
+    point: 91%,8%
+- tapOn:
+    point: 91%,8%
+- tapOn: About
