@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
-
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# PDM - Avaliação 2
 
 ## Get started
 
 1. Install dependencies
 
    ```bash
-   npm install
+   yarn install
    ```
 
 2. Start the app
 
    ```bash
-    npx expo start
+    yarn expo start
+   ```
+__________________________________________________
+# How to install and test this application
+
+## Jest
+
+- First, you need to install and configure Jest. Start by installing jest-expo using yarn
+   ```bash
+    yarn add -D jest-expo jest
+   ```
+- Then, as we are using Typescript, you must also add @types/jest as a dev dependency.
+   ```bash
+   yarn add --dev ts-jest @types/jest
+   ```
+- Finally, we make sure that any modules we are using within the node_modules directory are transpiled when running Jest by including transformIgnorePatterns in our package.json
+  ```json
+  "jest": {
+     "preset": "jest-expo",
+     "transformIgnorePatterns": [
+       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+     ]
+   }
    ```
 
-In the output, you'll find options to open the app in a
+## @testing-library
+- As the old React Testing Library got deprecated, we will use the recommended @testing-library/react-native. You can install it by using the following command:
+   ```bash
+   yarn add --dev @testing-library/react-native
+   ```
+## Maestro
+- Last, we will be installing Maestro to greatly help us with our end2end tests, by running the following command:
+   ```bash  
+      curl -Ls "https://get.maestro.mobile.dev" | bash
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Unitary Test
+- Now that everything is ready, we can run our tests with
+   ```bash
+      yarn test
+   ```
+## Maestro
+- The test was designed to be run in an "iPhone 15 Pro Max - iOS 17.5" in the Mac Simulator. If you are testing in an Android, the test might not work properly. To start our test, firstly we need to start expo server using:
+   ```bash
+      yarn ios
+   ```
+- And in another terminal, we can start our test using:
+   ```bash
+      maestro test test.yaml
+   ```
+__________________________________________________
+# Qual a diferença entre testes unitários e testes E2E (End to End) em aplicações mobile?
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Testes Unitários
 
-## Get a fresh project
+Os testes unitários são responsáveis por verificar pequenas partes isoladas do código, como funções ou métodos individuais, visto que, como o nome demonstra, eles têm por objetivo assegurar a qualidade das unidades e não o sistema como um todo. Com estes testes, garantimos que cada unidade de código funcione conforme esperado. Ao longo que o projeto cresce e novas funcionalidades são implementadas, os testes unitários nos ajudam a garantir a integridade da nossa aplicação, nos auxiliando a identificar se algo novo quebrou algo antigo.
+Os testes unitários são geralmente rápidos de executar e fáceis de escrever, focando em validar a lógica de negócio de forma granular.
 
-When you're ready, run:
+## Testes E2E (End to End)
 
-```bash
-npm run reset-project
-```
+Os testes E2E avaliam o comportamento de toda a aplicação do ponto de vista do usuário final, geralmente simulando as atividades que os usuários realizariam em um ambiente de produção, como cliques, navegações, entradas de dados em formulários, entre outros. Com esta simulação, é possível verificar se todos os componentes funcionam corretamente em conjunto, garantindo que a aplicação como um todo funcione conforme o esperado em um ambiente realista. Contudo, dependendo do framework utilizado, podem ser mais muito mais difíceis de escrever e manter devido à sua abrangência. A mudança de posicionamento de um elemento na tela pode implicar a reescrita de inúmeros testes. Ao mesmo tempo, tendem a ser mais lentos, pois envolvem mais componentes e dependências da aplicação. Mas ao final, são tão úteis, se não necessários, quanto os testes unitários.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
