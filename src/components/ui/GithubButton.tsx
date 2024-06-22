@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   github: {
     marginTop: 30,
-    height: 80,
-    width: 80,
+    height: 120,
+    width: 120,
   },
 });

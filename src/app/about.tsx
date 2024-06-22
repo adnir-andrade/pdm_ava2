@@ -22,9 +22,7 @@ export default function about() {
           </View>
 
           <View style={styles.container}>
-            <Text style={[styles.subtitle, { color: app!.textColor }]}>
-              Developed By
-            </Text>
+            <Text style={[styles.subtitle]}>Developed By</Text>
             <Text style={[styles.title, { color: app!.textColor }]}>
               Adnir Andrade
             </Text>
@@ -39,6 +37,7 @@ export default function about() {
 const styles = StyleSheet.create({
   mainContainer: {
     margin: 30,
+    height: 500,
   },
   firstContainer: {
     marginTop: 45,
@@ -54,6 +53,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     textAlign: "center",
-    // color: "#bf9370",
+    color: "#a60c0e",
   },
 });
